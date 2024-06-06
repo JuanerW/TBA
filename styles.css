@@ -1,31 +1,84 @@
 body {
     font-family: Arial, sans-serif;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    margin: 20px 0;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }
 
-.matrix {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
+.header h1 {
+    margin: 0;
 }
 
-.matrix-cell {
-    border: 2px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
+.header nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-#taskModal {
+.header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-section, .features-section, .about-section, .contact-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features-section ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.contact-section form {
+    display: inline-block;
+    text-align: left;
+}
+
+.contact-section label {
+    display: block;
+    margin-top: 1rem;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.contact-section button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    margin-top: 1rem;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -55,8 +108,7 @@ body {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;

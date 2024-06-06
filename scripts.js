@@ -11,9 +11,32 @@ function addTask() {
     const taskTime = document.getElementById('taskTime').value;
     const taskUrgency = document.getElementById('taskUrgency').value;
     const taskImportance = document.getElementById('taskImportance').value;
+    const taskCategory = document.getElementById('taskCategory').value;
 
     const task = document.createElement('li');
     task.textContent = `${taskName} - ${taskTime} min`;
+
+    switch (taskCategory) {
+        case 'work':
+            task.style.color = 'blue';
+            break;
+        case 'personal':
+            task.style.color = 'green';
+            break;
+        case 'other':
+            task.style.color = 'gray';
+            break;
+    }
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.onclick = function() { editTask(task) };
+    task.appendChild(editButton);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.onclick = function() { deleteTask(task) };
+    task.appendChild(deleteButton);
 
     if (taskImportance === 'important' && taskUrgency === 'urgent') {
         document.getElementById('do-list').appendChild(task);
@@ -27,4 +50,20 @@ function addTask() {
 
     closeTaskModal();
     document.getElementById('taskForm').reset();
+}
+
+function editTask(task) {
+    const taskDetails = task.firstChild.textContent.split(' - ');
+    const taskName = taskDetails[0];
+    const taskTime = parseInt(taskDetails[1]);
+
+    document.getElementById('taskName').value = taskName;
+    document.getElementById('taskTime').value = taskTime;
+    openTaskModal();
+
+    deleteTask(task);
+}
+
+function deleteTask(task) {
+    task.parentNode.removeChild(task);
 }

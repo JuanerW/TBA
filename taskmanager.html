@@ -55,7 +55,14 @@
                     <option value="important">Important</option>
                     <option value="not-important">Not Important</option>
                 </select>
-                
+
+                <label for="taskCategory">Category:</label>
+                <select id="taskCategory" name="taskCategory" required>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="other">Other</option>
+                </select>
+
                 <button type="button" onclick="addTask()">Add Task</button>
             </form>
         </div>
