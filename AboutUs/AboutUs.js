@@ -1,15 +1,11 @@
-// Function to toggle the sidebar
+//open and close sidebar function
 function toggleNav() {
     var sidebar = document.getElementById("mySidebar");
     var main = document.getElementById("main");
-    
-    // Check the current width of the sidebar
     if (sidebar.style.width === "250px") {
-        // Close the sidebar
         sidebar.style.width = "0";
         main.style.marginLeft = "0";
     } else {
-        // Open the sidebar
         sidebar.style.width = "250px";
         main.style.marginLeft = "250px";
     }
