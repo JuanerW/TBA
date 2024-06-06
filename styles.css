@@ -45,7 +45,7 @@ header {
 }
 
 .logo {
-    height: 50px;
+    height: 100px;
     margin-right: 20px;
 }
 
@@ -276,4 +276,3 @@ header {
 .add-task-btn:hover {
     background-color: #c0392b;
 }
-
